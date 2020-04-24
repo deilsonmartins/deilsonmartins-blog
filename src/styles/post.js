@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import media from "styled-media-query";
+
 export const Wrapper = styled.header`
   color: black;
   margin: auto;
@@ -17,12 +19,20 @@ export const Wrapper = styled.header`
     font-size: 2rem;
     font-weight: 200;
     padding: 0 1.4rem;
+
+    ${media.lessThan("large")`
+      font-size: 1rem;
+    `}
   }
 
   span {
     font-size: 1.1rem;
     font-weight: 100;
     padding: 0 1.4rem;
+
+    ${media.lessThan("large")`
+      font-size: 0.8rem;
+    `}
   }
 
 `;
@@ -48,6 +58,9 @@ export const MainContent = styled.div`
     line-height: 1.7;
     letter-spacing: 0.069rem;
     padding: 0 1.4rem;
+    ${media.lessThan("large")`
+      font-size: 0.9rem;
+    `}
   }
   p {
     margin: 0 auto 1.6rem;

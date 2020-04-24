@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import media from "styled-media-query";
+
 export const HeaderMain = styled.div`
   display: flex;
   margin-bottom: 30px;
@@ -19,9 +21,16 @@ export const HeaderMain = styled.div`
       width: 150px;
       height: 150px;
     }
-  }
-  
-  
+
+    ${media.lessThan("large")`
+    img {
+      margin-left: 20px;
+      width: 100px;
+      height: 100px;
+    }
+`
+
+   }  
 `;
 export const HeaderNav = styled.div`
   width: 100%;
@@ -35,12 +44,25 @@ export const HeaderNav = styled.div`
     height: 25px;
     padding-top: 18px;
 
+
+    ${media.lessThan("large")`
+        height: 150px;
+        padding-top: 0px;
+        flex-direction: row;
+  
+    `}
+
     li {
       float: left;
       margin-right: 20px;
       .active {
         text-decoration: underline;
       }
+
+      ${media.lessThan("large")`
+        margin-bottom: 25px;
+
+      `}
 
       a {
         background: #000;
@@ -52,6 +74,7 @@ export const HeaderNav = styled.div`
         cursor: pointer;
         border-radius: 10px;
       }
+
 
       h1 {
         font-size: 20px;

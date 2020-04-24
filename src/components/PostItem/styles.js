@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import {Link} from 'gatsby';
 
+import media from "styled-media-query";
+
 export const Wrapper = styled.div`
     display: flex;
     width: 100%;
@@ -51,4 +53,8 @@ export const PostLink = styled(Link)`
         background: #BDBDBD;
     }
 
+    ${media.lessThan("large")`
+        width: 300px;
+        height: 250px;
+    `}
 `
